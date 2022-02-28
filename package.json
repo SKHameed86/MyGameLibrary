@@ -1,0 +1,14 @@
+{
+  "name": "mygamelibrary",
+  "version": "1.0.0",
+  "description": "Tech exercise to display a game library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shahnaz K Hameed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
