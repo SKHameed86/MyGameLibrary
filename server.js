@@ -20,6 +20,8 @@ app.get('/', (request, response) => {
 });
 
 const port = process.env.PORT || 8000;
+
+require("./app/routes/gameslibrary.routes.js")(app);
 app.listen(port, () => {
     console.log(`listening on ${port}`);
 });
