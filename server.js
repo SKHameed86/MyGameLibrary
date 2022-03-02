@@ -5,8 +5,12 @@ const morgan = require('morgan'); // log http requests to the console
 
 const app = express();
 
+var corsOptions = {
+    orgin: "http://localhost:8081"
+}
+
 app.use(morgan('tiny'));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.get('/', (request, response) => {
