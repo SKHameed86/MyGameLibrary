@@ -21,7 +21,7 @@ exports.create = (req, res) => {
     });
     
     // Save Game in the database
-    GamesLibrary.create(gameEntry, (err, data) => {
+    GameLibrary.create(gameEntry, (err, data) => {
         if (err)
         res.status(500).send({
             message:
@@ -34,7 +34,7 @@ exports.create = (req, res) => {
 // Retrieve all Games from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
-    GamesLibrary.getAll(title, (err, data) => {
+    GameLibrary.getAll(title, (err, data) => {
         if (err)
         res.status(500).send({
             message:

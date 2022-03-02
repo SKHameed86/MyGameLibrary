@@ -1,6 +1,6 @@
 module.exports = {
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "",
-    DB: "game_library_db"
+    HOST: 'localhost',
+    USER: 'username',
+    PASSWORD: 'password',
+    DB: 'games_library_db'
   };
