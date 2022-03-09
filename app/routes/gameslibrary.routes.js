@@ -1,13 +1,13 @@
 module.exports = app => {
-    const gameLibrary = require("../controllers/gameslibrary.controller.js");
+    const gameEntries = require("../controllers/gameslibrary.controller.js");
     
     var router = require("express").Router();
     
     // Add a new Game
-    router.post("/", gameLibrary.create);
+    router.post("/", gameEntries.create);
     
     // Retrieve all Games
-    router.get("/", gameLibrary.findAll);
+    router.get("/", gameEntries.findAll);
 
-    app.use('/api/gameLibrary', router);
+    app.use('/api/gameEntries', router);
   };
