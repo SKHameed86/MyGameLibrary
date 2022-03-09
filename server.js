@@ -6,12 +6,19 @@ const morgan = require('morgan'); // log http requests to the console
 const app = express();
 
 var corsOptions = {
-    orgin: "http://localhost:8081"
+    orgin: 'http://localhost:8081'
 }
 
 app.use(morgan('tiny'));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const db = require('./app/models');
+db.sequelize.sync();
+// db.sequelize.sync({ force: true }).then(() => {
+//     console.log('Drop and re-sync db.');
+// });
 
 app.get('/', (request, response) => {
     response.json({
@@ -19,9 +26,10 @@ app.get('/', (request, response) => {
     });
 });
 
+require('./app/routes/gameslibrary.routes.js')(app);
+
 const port = process.env.PORT || 8000;
 
-require("./app/routes/gameslibrary.routes.js")(app);
 app.listen(port, () => {
     console.log(`listening on ${port}`);
 });
