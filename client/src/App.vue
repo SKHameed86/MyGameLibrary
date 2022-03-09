@@ -1,7 +1,8 @@
 <template>
 <div id='app'>
-  <nav class='navbar navbar-expand navbar-dark bg-dark'>
-      <router-link to='/' class='navbar-brand'>Games Library</router-link>
+  <div id='sony-bar' class='sony-bar'><span class='sony-logo sony-logo-space' /></div>
+  <nav class='navbar navbar-expand navbar-white bg-white'>
+      <router-link to='/' class='navbar-brand'><img class='ps-logo' src='./assets/logo_ps-v2.png' /></router-link>
       <div class='navbar-nav mr-auto'>
         <li class='nav-item'>
           <router-link to='/games' class='nav-link'>View Games</router-link>
@@ -43,5 +44,35 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+a.navbar-brand {
+  width: 50px;
+}
+
+div.sony-bar {
+  background-color: black;
+  height: 30px;
+}
+
+span.sony-logo {
+  background-image: url(./assets/logo_sony-v2.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  float: right;
+}
+
+span.sony-logo-space {
+  width: 75px;
+  margin: 0 8px;
+}
+
+img.ps-logo {
+  width: 100%;
+  float: left;
 }
 </style>
