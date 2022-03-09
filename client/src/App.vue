@@ -1,10 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+<div id='app'>
+  <nav class='navbar navbar-expand navbar-dark bg-dark'>
+      <router-link to='/' class='navbar-brand'>Games Library</router-link>
+      <div class='navbar-nav mr-auto'>
+        <li class='nav-item'>
+          <router-link to='/games' class='nav-link'>View Games</router-link>
+        </li>
+        <li class='nav-item'>
+          <router-link to='/add' class='nav-link'>Add Game</router-link>
+        </li>
+      </div>
+    </nav>
+    <div class='container mt-3'>
+      <router-view />
+    </div>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'app',
+};
+</script>
 
 <style>
 #app {
